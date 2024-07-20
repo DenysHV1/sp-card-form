@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+	<link rel="stylesheet" href="./css/style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link
+rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css"
+/>
+</head>
+<body>
+	<section>
+		<div class="section-inner container">
+			<h1 class="main-title">Payment Form</h1>
+			<div class="main-content">
+				<div class="card">
+					<div class="card-inner">
+						<p class="number-on-the-card">XXXX XXXX XXXX XXXX</p>
+						<ul class="card-info-list">
+							<li class="info-item-left">
+								<p class="description-name">CARD HOLDER</p>
+								<p class="name-on-the-card">Your Name</p>
+							</li>
+							<li class="info-item-right">
+								<p class="description-data">Card Holder</p>
+								<p class="data-on-the-card">12/12</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="container-for-form">
+					<h2 class="form-title">Payment Details</h2>
+					<form action="submit" class="main-form-card">
+						<label class="label-name" for="user-name">Cardholder Name</label>
+						<input class="input-name" type="text" name="userName" id="user-name">
+						<label class="label-number" for="user-number">Card Number</label>
+						<input class="input-number" type="number" name="userNumber" id="user-number">
+						<div class="container-for-inputs">
+							<label class="label-data">
+								Exp Date
+								<input class="input-data" name="userData" type="date">
+							</label>
+							<label class="label-data">
+								CVV
+								<input class="input-pass" name="userPassword" type="password">
+							</label>
+						</div>
+						<button type="submit" class="main-button">Confirm</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+    <script type="module" src="./js/main.js"></script>
+</body>
+</html>
