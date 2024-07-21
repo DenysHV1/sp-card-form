@@ -245,7 +245,8 @@ img {
   outline: none;
   padding-top: 2px;
   padding-bottom: 2px;
-  width: 110px;
+  max-width: 130px;
+  cursor: pointer;
 }
 
 .input-pass {

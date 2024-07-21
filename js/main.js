@@ -145,8 +145,8 @@ function numberEventCard(event) {
 
 //* Прив'язуємо ввід тексту з інпута до карти - data;
 inputData.addEventListener('input', dataEventCard);
-
 function dataEventCard(event) {
   const inputDataInside = event.target.value.replace('-', '/');
   dataOnCard.textContent = inputDataInside;
+  console.dir(event.target.children);
 }
