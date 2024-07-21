@@ -189,22 +189,32 @@ img {
   background-color: transparent;
   border: 1.3px solid rgba(0, 0, 0, 0.225);
   border-radius: 4px;
-  padding-left: 28px;
+  padding-left: 35px;
   outline: none;
   padding-top: 2px;
   padding-bottom: 2px;
   margin-bottom: 20px;
 }
 
+.input-name::placeholder{
+	opacity: 0.5;
+	font-size: 14px;
+}
+
 .input-number {
   background-color: transparent;
   border: 1.3px solid rgba(0, 0, 0, 0.225);
   border-radius: 4px;
-  padding-left: 28px;
+  padding-left: 35px;
   outline: none;
   padding-top: 2px;
   padding-bottom: 2px;
   margin-bottom: 20px;
+}
+
+.input-number::placeholder{
+	opacity: 0.5;
+	font-size: 14px;
 }
 
 .container-for-inputs {
@@ -231,7 +241,7 @@ img {
   background-color: transparent;
   border: 1.3px solid rgba(0, 0, 0, 0.225);
   border-radius: 4px;
-  padding-left: 2px;
+  padding-left: 8px;
   outline: none;
   padding-top: 2px;
   padding-bottom: 2px;
@@ -301,7 +311,7 @@ img {
 .lock_svg {
   position: absolute;
   top: 29px;
-  left: 0;
+  left: 3px;
   opacity: 0.7;
 }
 
