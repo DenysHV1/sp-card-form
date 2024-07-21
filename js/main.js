@@ -78,12 +78,19 @@ function oneClickForSend(event) {
   }
   //! Перевірка ім'я і фімілію без пробіла
   if (!userName.includes(' ')) {
-    return alert('Между именем и фамилией, должен быть пробел');
+    return alert('Після імені повинен бути пробіл');
   }
 
   //! Перевірка на максимальну кількість символів
-  if (userNumber.length === 17) {
-    return alert('максимальна кылькысть чисел 16');
+  if (userNumber.length !== 16) {
+    console.log(userNumber.length);
+    return alert('Кількість чисел повинна дорівнювати 16');
+  }
+
+  //! Перевірка на максимальну кількість символів
+  if (userCvv.length !== 3) {
+    console.log(userCvv.length);
+    return alert('Кількість чисел повинна дорівнювати 3');
   }
 
   const userObj = new User(
@@ -94,9 +101,6 @@ function oneClickForSend(event) {
   );
   console.dir(userObj);
 
-  numberOnCard.textContent = userNumber;
-  nameOnCard.textContent = userName;
-  dataOnCard.textContent = userData;
   thankYou.textContent = 'Success!';
 }
 
