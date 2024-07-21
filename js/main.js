@@ -83,12 +83,16 @@ function oneClickForSend(event) {
     }
   }
   nameError.textContent = '';
+  cvvError.textContent = '';
+  numberError.textContent = '';
   //! Перевірка ім'я і фімілії на пробіл
   if (!userName.includes(' ')) {
     nameError.textContent = 'Must be a space after the name!';
     return nameError.textContent;
   }
   nameError.textContent = '';
+  cvvError.textContent = '';
+  numberError.textContent = '';
   //! Перевірка на максимальну кількість символів
   if (userNumber.length !== 16) {
     numberError.textContent = 'Must be 16 numbers!';
@@ -100,7 +104,9 @@ function oneClickForSend(event) {
     cvvError.textContent = 'Must be 3 numbers!';
     return cvvError.textContent;
   }
+  nameError.textContent = '';
   cvvError.textContent = '';
+  numberError.textContent = '';
   const userObj = new User(
     userName.trim(),
     userNumber.trim(),
