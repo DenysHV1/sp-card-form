@@ -1,4 +1,4 @@
-//* Const from card
+//todo Const from card
 
 const numberOnCard = document.querySelector('.number-on-the-card');
 const nameOnCard = document.querySelector('.name-on-the-card');
@@ -14,7 +14,7 @@ class User {
   }
 }
 
-//* Const from FORM
+//todo Const from FORM
 const form = document.querySelector('.main-form-card');
 const thankYou = document.querySelector('.thank-you');
 const cvvError = document.querySelector('.cvv-error');
@@ -31,82 +31,78 @@ function oneClickForSend(event) {
   const userCvv = event.target.elements.userPassword.value;
 
   //! Перевірка на символи і числа в імені
-  const array = [
-    '1',
-    '2',
-    '3',
-    '4',
-    '5',
-    '6',
-    '7',
-    '8',
-    '9',
-    '0',
-    '!',
-    '£',
-    '$',
-    '%',
-    '^',
-    '&',
-    '*',
-    '(',
-    ')',
-    '_',
-    '-',
-    '+',
-    '=',
-    '#',
-    '~',
-    '/',
-    '?',
-    '{',
-    '}',
-    '[',
-    ']',
-    '`',
-    '¬',
-    '|',
-    '"',
-    ',',
-    '.',
-    '@',
-    '<',
-    '>',
-    ':',
-    ';',
-  ];
-  //! Перевірка на символи
+  const array = ['1','2','3','4','5','6','7','8','9','0','!','£','$','%','^',
+'&','*','(',')','_','-','+','=','#','~','/','?','{','}','[',']','`','¬','|','"',',','.','@','<','>',':',';',];
   for (let i = 0; i < array.length; i += 1) {
     if (userName.includes(array[i])) {
       nameError.textContent = `Invalid character in name: ${array[i]}`;
+	  nameError.style.boxShadow = "rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px";
+	  nameError.style.backgroundColor = '#ffe0a7';
       return nameError.textContent;
     }
   }
   nameError.textContent = '';
   cvvError.textContent = '';
   numberError.textContent = '';
+  cvvError.style.boxShadow ='';
+  numberError.style.boxShadow ='';
+  nameError.style.boxShadow = '';
+  numberError.style.backgroundColor = '';
+  cvvError.style.backgroundColor = '';
+  nameError.style.backgroundColor = '';
+
   //! Перевірка ім'я і фімілії на пробіл
   if (!userName.includes(' ')) {
     nameError.textContent = 'Must be a space after the name!';
+	nameError.style.boxShadow = "rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px";
+	nameError.style.backgroundColor = '#ffe0a7';
     return nameError.textContent;
   }
   nameError.textContent = '';
   cvvError.textContent = '';
   numberError.textContent = '';
+  cvvError.style.boxShadow ='';
+  numberError.style.boxShadow ='';
+  nameError.style.boxShadow = '';
+  numberError.style.backgroundColor = '';
+  cvvError.style.backgroundColor = '';
+  nameError.style.backgroundColor = '';
+
   //! Перевірка на максимальну кількість символів
   if (userNumber.length !== 16) {
     numberError.textContent = 'Must be 16 numbers!';
+	numberError.style.boxShadow = "rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px";
+	numberError.style.backgroundColor = '#ffe0a7';
     return userNumber.textContent;
   }
+  nameError.textContent = '';
+  cvvError.textContent = '';
   numberError.textContent = '';
+  cvvError.style.boxShadow ='';
+  numberError.style.boxShadow ='';
+  nameError.style.boxShadow = '';
+  numberError.style.backgroundColor = '';
+  cvvError.style.backgroundColor = '';
+  nameError.style.backgroundColor = '';
+
   //! Перевірка на максимальну кількість символів
   if (userCvv.length !== 3) {
     cvvError.textContent = 'Must be 3 numbers!';
+	cvvError.style.boxShadow = "rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px";
+	cvvError.style.backgroundColor = '#ffe0a7';
     return cvvError.textContent;
   }
   nameError.textContent = '';
   cvvError.textContent = '';
   numberError.textContent = '';
+  cvvError.style.boxShadow ='';
+  numberError.style.boxShadow ='';
+  nameError.style.boxShadow = '';
+  numberError.style.backgroundColor = '';
+  cvvError.style.backgroundColor = '';
+  nameError.style.backgroundColor = '';
+
+  //* Приймаєм аргументи в об'єкт
   const userObj = new User(
     userName.trim(),
     userNumber.trim(),
@@ -118,10 +114,12 @@ function oneClickForSend(event) {
   thankYou.textContent = 'Success!';
 }
 
+//todo Створюємо константи інпутів
 const inputName = document.querySelector('.input-name');
 const inputNumber = document.querySelector('.input-number');
 const inputData = document.querySelector('.input-data');
 
+//* Прив'язуємо ввід тексту з інпута до карти - name;
 inputName.addEventListener('input', nameEventCard);
 
 function nameEventCard(event) {
@@ -129,6 +127,7 @@ function nameEventCard(event) {
   nameOnCard.textContent = inputNameInside;
 }
 
+//* Прив'язуємо ввід тексту з інпута до карти - number;
 inputNumber.addEventListener('input', numberEventCard);
 
 function numberEventCard(event) {
@@ -144,9 +143,10 @@ function numberEventCard(event) {
   numberOnCard.textContent = inputNumberInside.trim(); // Убираем пробел в конце
 }
 
+//* Прив'язуємо ввід тексту з інпута до карти - data;
 inputData.addEventListener('input', dataEventCard);
 
 function dataEventCard(event) {
-  const inputDataInside = event.target.value;
+  const inputDataInside = event.target.value.replace('-', '/');
   dataOnCard.textContent = inputDataInside;
 }

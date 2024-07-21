@@ -314,34 +314,39 @@ img {
 .name-error {
   font-size: 12px;
   font-weight: 500;
-  opacity: 0.9;
   color: red;
   position: absolute;
   white-space: nowrap;
-  top: 57px;
+  top: 59px;
   left: 40px;
+  padding: 1px 5px;
+  border-radius: 3px;
+
 }
 
 .number-error {
   font-size: 12px;
   font-weight: 500;
-  opacity: 0.9;
   color: red;
   position: absolute;
   white-space: nowrap;
-  top: 56px;
+  top: 59px;
   left: 99px;
+  padding: 1px 5px;
+  border-radius: 3px;
 }
 
 .cvv-error {
   font-size: 12px;
   font-weight: 500;
-  opacity: 0.9;
   color: red;
   position: absolute;
   white-space: nowrap;
-  top: 52px;
+  top: 54px;
   left: -27px;
+  padding: 1px 5px;
+  border-radius: 3px;
+
 }
 
 @media (max-width: 700px) {
