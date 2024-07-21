@@ -212,7 +212,8 @@ img {
   align-items: baseline;
   justify-content: center;
   gap: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  position: relative;
 }
 
 .label-data {
@@ -280,6 +281,7 @@ img {
   flex-direction: column;
   gap: 5px;
   position: relative;
+  margin-bottom: 10px;
 }
 
 .number_svg {
@@ -307,6 +309,39 @@ img {
   color: rgb(13, 161, 13);
   font-size: 14px;
   margin-top: 5px;
+}
+
+.name-error {
+  font-size: 12px;
+  font-weight: 500;
+  opacity: 0.9;
+  color: red;
+  position: absolute;
+  white-space: nowrap;
+  top: 57px;
+  left: 40px;
+}
+
+.number-error {
+  font-size: 12px;
+  font-weight: 500;
+  opacity: 0.9;
+  color: red;
+  position: absolute;
+  white-space: nowrap;
+  top: 56px;
+  left: 99px;
+}
+
+.cvv-error {
+  font-size: 12px;
+  font-weight: 500;
+  opacity: 0.9;
+  color: red;
+  position: absolute;
+  white-space: nowrap;
+  top: 52px;
+  left: -27px;
 }
 
 @media (max-width: 700px) {

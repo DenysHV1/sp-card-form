@@ -17,6 +17,10 @@ class User {
 //* Const from FORM
 const form = document.querySelector('.main-form-card');
 const thankYou = document.querySelector('.thank-you');
+const cvvError = document.querySelector('.cvv-error');
+const numberError = document.querySelector('.number-error');
+const nameError = document.querySelector('.name-error');
+
 form.addEventListener('submit', oneClickForSend);
 
 function oneClickForSend(event) {
@@ -71,28 +75,32 @@ function oneClickForSend(event) {
     ':',
     ';',
   ];
+  //! Перевірка на символи
   for (let i = 0; i < array.length; i += 1) {
     if (userName.includes(array[i])) {
-      return alert(`Недопустимий символ в імені ${array[i]}`);
+      nameError.textContent = `Invalid character in name: ${array[i]}`;
+      return nameError.textContent;
     }
   }
-  //! Перевірка ім'я і фімілію без пробіла
+  nameError.textContent = '';
+  //! Перевірка ім'я і фімілії на пробіл
   if (!userName.includes(' ')) {
-    return alert('Після імені повинен бути пробіл');
+    nameError.textContent = 'Must be a space after the name!';
+    return nameError.textContent;
   }
-
+  nameError.textContent = '';
   //! Перевірка на максимальну кількість символів
   if (userNumber.length !== 16) {
-    console.log(userNumber.length);
-    return alert('Кількість чисел повинна дорівнювати 16');
+    numberError.textContent = 'Must be 16 numbers!';
+    return userNumber.textContent;
   }
-
+  numberError.textContent = '';
   //! Перевірка на максимальну кількість символів
   if (userCvv.length !== 3) {
-    console.log(userCvv.length);
-    return alert('Кількість чисел повинна дорівнювати 3');
+    cvvError.textContent = 'Must be 3 numbers!';
+    return cvvError.textContent;
   }
-
+  cvvError.textContent = '';
   const userObj = new User(
     userName.trim(),
     userNumber.trim(),
