@@ -31,21 +31,64 @@ function oneClickForSend(event) {
   const userCvv = event.target.elements.userPassword.value;
 
   //! Перевірка на символи і числа в імені
-  const array = ['1','2','3','4','5','6','7','8','9','0','!','£','$','%','^',
-'&','*','(',')','_','-','+','=','#','~','/','?','{','}','[',']','`','¬','|','"',',','.','@','<','>',':',';',];
+  const array = [
+    '1',
+    '2',
+    '3',
+    '4',
+    '5',
+    '6',
+    '7',
+    '8',
+    '9',
+    '0',
+    '!',
+    '£',
+    '$',
+    '%',
+    '^',
+    '&',
+    '*',
+    '(',
+    ')',
+    '_',
+    '-',
+    '+',
+    '=',
+    '#',
+    '~',
+    '/',
+    '?',
+    '{',
+    '}',
+    '[',
+    ']',
+    '`',
+    '¬',
+    '|',
+    '"',
+    ',',
+    '.',
+    '@',
+    '<',
+    '>',
+    ':',
+    ';',
+  ];
   for (let i = 0; i < array.length; i += 1) {
     if (userName.includes(array[i])) {
       nameError.textContent = `Invalid character in name: ${array[i]}`;
-	  nameError.style.boxShadow = "rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px";
-	  nameError.style.backgroundColor = '#ffe0a7';
+      nameError.style.boxShadow =
+        'rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px';
+      nameError.style.backgroundColor = '#ffe0a7';
       return nameError.textContent;
     }
   }
   nameError.textContent = '';
   cvvError.textContent = '';
   numberError.textContent = '';
-  cvvError.style.boxShadow ='';
-  numberError.style.boxShadow ='';
+  cvvError.style.boxShadow = '';
+  numberError.style.boxShadow = '';
   nameError.style.boxShadow = '';
   numberError.style.backgroundColor = '';
   cvvError.style.backgroundColor = '';
@@ -54,15 +97,16 @@ function oneClickForSend(event) {
   //! Перевірка ім'я і фімілії на пробіл
   if (!userName.includes(' ')) {
     nameError.textContent = 'Must be a space after the name!';
-	nameError.style.boxShadow = "rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px";
-	nameError.style.backgroundColor = '#ffe0a7';
+    nameError.style.boxShadow =
+      'rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px';
+    nameError.style.backgroundColor = '#ffe0a7';
     return nameError.textContent;
   }
   nameError.textContent = '';
   cvvError.textContent = '';
   numberError.textContent = '';
-  cvvError.style.boxShadow ='';
-  numberError.style.boxShadow ='';
+  cvvError.style.boxShadow = '';
+  numberError.style.boxShadow = '';
   nameError.style.boxShadow = '';
   numberError.style.backgroundColor = '';
   cvvError.style.backgroundColor = '';
@@ -71,15 +115,16 @@ function oneClickForSend(event) {
   //! Перевірка на максимальну кількість символів
   if (userNumber.length !== 16) {
     numberError.textContent = 'Must be 16 numbers!';
-	numberError.style.boxShadow = "rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px";
-	numberError.style.backgroundColor = '#ffe0a7';
+    numberError.style.boxShadow =
+      'rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px';
+    numberError.style.backgroundColor = '#ffe0a7';
     return userNumber.textContent;
   }
   nameError.textContent = '';
   cvvError.textContent = '';
   numberError.textContent = '';
-  cvvError.style.boxShadow ='';
-  numberError.style.boxShadow ='';
+  cvvError.style.boxShadow = '';
+  numberError.style.boxShadow = '';
   nameError.style.boxShadow = '';
   numberError.style.backgroundColor = '';
   cvvError.style.backgroundColor = '';
@@ -88,15 +133,16 @@ function oneClickForSend(event) {
   //! Перевірка на максимальну кількість символів
   if (userCvv.length !== 3) {
     cvvError.textContent = 'Must be 3 numbers!';
-	cvvError.style.boxShadow = "rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px";
-	cvvError.style.backgroundColor = '#ffe0a7';
+    cvvError.style.boxShadow =
+      'rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px';
+    cvvError.style.backgroundColor = '#ffe0a7';
     return cvvError.textContent;
   }
   nameError.textContent = '';
   cvvError.textContent = '';
   numberError.textContent = '';
-  cvvError.style.boxShadow ='';
-  numberError.style.boxShadow ='';
+  cvvError.style.boxShadow = '';
+  numberError.style.boxShadow = '';
   nameError.style.boxShadow = '';
   numberError.style.backgroundColor = '';
   cvvError.style.backgroundColor = '';
@@ -109,9 +155,13 @@ function oneClickForSend(event) {
     userData,
     userCvv.trim()
   );
+
   console.dir(userObj);
 
   thankYou.textContent = 'Success!';
+  sessionStorage.removeItem('nameOnCard');
+  sessionStorage.removeItem('numberOnCard');
+  sessionStorage.removeItem('dataOnCard');
 }
 
 //todo Створюємо константи інпутів
@@ -119,12 +169,18 @@ const inputName = document.querySelector('.input-name');
 const inputNumber = document.querySelector('.input-number');
 const inputData = document.querySelector('.input-data');
 
+inputName.value = sessionStorage.getItem('nameOnCard');
+inputNumber.value = sessionStorage.getItem('numberOnCard');
+inputData.value = sessionStorage.getItem('dataOnCard');
+
 //* Прив'язуємо ввід тексту з інпута до карти - name;
 inputName.addEventListener('input', nameEventCard);
 
 function nameEventCard(event) {
   const inputNameInside = event.target.value;
   nameOnCard.textContent = inputNameInside;
+
+  sessionStorage.setItem('nameOnCard', event.target.value);
 }
 
 //* Прив'язуємо ввід тексту з інпута до карти - number;
@@ -141,6 +197,8 @@ function numberEventCard(event) {
   inputNumberInside = inputNumberInside.replace(/(.{4})/g, '$1 ');
 
   numberOnCard.textContent = inputNumberInside.trim(); // Убираем пробел в конце
+
+  sessionStorage.setItem('numberOnCard', event.target.value);
 }
 
 //* Прив'язуємо ввід тексту з інпута до карти - data;
@@ -149,4 +207,6 @@ function dataEventCard(event) {
   const inputDataInside = event.target.value.replace('-', '/');
   dataOnCard.textContent = inputDataInside;
   console.dir(event.target.children);
+
+  sessionStorage.setItem('dataOnCard', event.target.value);
 }
